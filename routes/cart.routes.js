@@ -8,8 +8,9 @@ const {
   removeCartItem,
 } = require("../controllers/cart.controller");
 
-router.post("/", auth, addToCart);
-router.put("/:id", auth, updateCartItem);
-router.delete("/:id", auth, removeCartItem);
+// Cart routes (all protected)
+router.post("/", auth, addToCart); // Add item to cart
+router.put("/:id", auth, updateCartItem); // Update cart item quantity
+router.delete("/:id", auth, removeCartItem); // Remove item from cart
 
 module.exports = router;
